@@ -20,7 +20,13 @@ export default {
 <template>
     <div class="header">
       <h1 style="color:red">BOOFLIX</h1>
-      <input type="text" placeholder="Cerca Film o Serie TV" v-model="store.SearchBar" @keyup.enter="emitMovie">
+
+      <input 
+      type="text" 
+      placeholder="Cerca Film o Serie TV" 
+      v-model="store.SearchBar" 
+      @keyup.enter="emitMovie">
+      
       <button @click="emitMovie">
         search
       </button>
