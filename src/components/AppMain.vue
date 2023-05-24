@@ -1,5 +1,6 @@
 <script>
 import AppCardMovie from './Main/AppCardMovie.vue';
+import AppCardSeries from './Main/AppCardSeries.vue';
 import { store }  from './../store';
 export default {
   data() {
@@ -10,6 +11,7 @@ export default {
   components:
   {
     AppCardMovie,
+    AppCardSeries,
   }
 }
 </script>
@@ -20,9 +22,12 @@ export default {
     v-for="card in store.ArrMovies"
     :key="card.id"
     :title="card.title"
-    :original_language="card.original_language"
-    :original_title="card.original_title"
-    :vote_averange="card.vote_averange"
+    :moviecard="card"
+    />
+    <AppCardSeries 
+    v-for="cardseries in store.ArrSeries"
+    :key="cardseries.id"
+    :seriescard="cardseries"
     />
   </div>
 </template>

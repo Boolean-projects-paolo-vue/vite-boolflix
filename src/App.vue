@@ -17,40 +17,47 @@
     methods: {
       RequestMoviesfromApi(){
         axios
-        .get('https://api.themoviedb.org/3/search/movie?api_key=919b51ee159faf8d6a30b50361801a6d&query=all',)
+        .get('https://api.themoviedb.org/3/search/movie',{
+          params:{
+            api_key: '919b51ee159faf8d6a30b50361801a6d',
+            query: this.store.SearchBar,
+          }
+        }
+        
+        )
           .then(response => (this.store.ArrMovies = response.data.results));
+          axios
+        .get('https://api.themoviedb.org/3/search/tv',{
+          params:{
+            api_key: '919b51ee159faf8d6a30b50361801a6d',
+            query: this.store.SearchBar,
+          }
+        }
+        
+        )
+          .then(response => (this.store.ArrSeries = response.data.results));
       },
-    },
-    created() {
-      this.RequestMoviesfromApi();
     },
   };
 </script>
 
 <template>
 
-  <body class="body">
-    <Header>
-      <AppHeader />
-    </Header>
-
-    <Main>
-      <AppMain />
-    </Main>
-  </body>
   
+  <Header>
+    <AppHeader @performSearch="RequestMoviesfromApi" />
+  </Header>
+
+  <Main>
+    <AppMain />
+  </Main>
+
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-}
-  .body{
-    height: 100vh;
-    background-color: aquamarine;
-  }
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+
 </style>
