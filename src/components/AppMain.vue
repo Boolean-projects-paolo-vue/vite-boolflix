@@ -39,6 +39,9 @@ export default {
 
 <style lang="scss">
   .card_movie{
+    margin: auto;
+    max-width: 85%;
+    border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
   }
