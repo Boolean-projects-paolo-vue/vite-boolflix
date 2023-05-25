@@ -18,20 +18,29 @@ export default {
 
 <template>
   <div class="container_card">
-    <AppCardMovie 
-    v-for="card in store.ArrMovies"
-    :key="card.id"
-    :title="card.title"
-    :moviecard="card"
-    />
-    <AppCardSeries 
-    v-for="cardseries in store.ArrSeries"
-    :key="cardseries.id"
-    :seriescard="cardseries"
-    />
+
+    <div class="card_movie">
+      <AppCardMovie 
+        v-for="card in store.ArrMovies"
+        :key="card.id"
+        :moviecard="card"
+      />
+    </div>
+    <div class="card_movie series">
+      <AppCardSeries 
+        v-for="cardseries in store.ArrSeries"
+        :key="cardseries.id"
+        :seriescard="cardseries"
+      />
+    </div>
+   
   </div>
 </template>
 
 <style lang="scss">
+  .card_movie{
+    display: flex;
+    flex-wrap: wrap;
+  }
 
 </style>

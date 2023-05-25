@@ -1,0 +1,5 @@
+
+
+altro metodo per fa apparire le immagini (il simbolo del dollaro fa da collante)
+
+:src="`https://image.tmdb.org/t/p/w342${moviecard.poster_path}`"

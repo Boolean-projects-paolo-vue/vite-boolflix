@@ -32,6 +32,9 @@ export default {
       </button>
       
     </div>
+    <div>
+      <small v-show="store.inputError">scrivi qualcosa per la tua ricerca</small>
+    </div>
 </template>
 
 <style lang="scss" scoped>

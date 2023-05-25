@@ -16,15 +16,17 @@
     },
     methods: {
       RequestMoviesfromApi(){
-        axios
+        if(store.SearchBar == ''){
+          this.store.inputError = true;
+        }else{
+          this.store.inputError = false;
+          axios
         .get('https://api.themoviedb.org/3/search/movie',{
           params:{
             api_key: '919b51ee159faf8d6a30b50361801a6d',
             query: this.store.SearchBar,
           }
-        }
-        
-        )
+        })
           .then(response => (this.store.ArrMovies = response.data.results));
           axios
         .get('https://api.themoviedb.org/3/search/tv',{
@@ -32,11 +34,21 @@
             api_key: '919b51ee159faf8d6a30b50361801a6d',
             query: this.store.SearchBar,
           }
+        })
+          .then(response => (this.store.ArrSeries = response.data.results));
         }
         
-        )
-          .then(response => (this.store.ArrSeries = response.data.results));
       },
+    },
+    created() {
+      axios
+        .get('https://api.themoviedb.org/3/movie/top_rated',{
+          params:{
+            api_key: '919b51ee159faf8d6a30b50361801a6d',
+            query: this.store.SearchBar,
+          }
+        })
+          .then(response => (this.store.ArrMovies = response.data.results));
     },
   };
 </script>

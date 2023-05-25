@@ -4,4 +4,5 @@ import { reactive } from 'vue';
     ArrMovies: [],
     ArrSeries:[],
     SearchBar:"",
+    inputError: false,
 });
