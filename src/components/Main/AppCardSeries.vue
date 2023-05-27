@@ -14,7 +14,7 @@
 
 <template>
 
-    <div class="card rounded-4" style="border: 1px solid black;">
+    <div class="card rounded-4" style="border: 1px solid red;">
         <div class="part front rounded-4">
             <img v-if="seriescard.poster_path" 
             :src="'https://image.tmdb.org/t/p/w342' + seriescard.poster_path"  
@@ -86,7 +86,7 @@
         padding-inline: 3.5rem;
         justify-content: center;
         flex-direction: column;
-        font-size: 14px;
+        font-size: 15px;
         text-align: justify;
     }
 

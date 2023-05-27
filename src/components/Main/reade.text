@@ -3,3 +3,22 @@
 altro metodo per fa apparire le immagini (il simbolo del dollaro fa da collante)
 
 :src="`https://image.tmdb.org/t/p/w342${moviecard.poster_path}`"
+
+
+
+  /*RequestCastFilm(){
+        for(let i = 0; i < store.ArrMovies.length; i++) {
+          axios
+            .get('https://api.themoviedb.org/3/movie/$[store.ArrMovies[i].id/credits]',{
+              params:{
+                api_key: '919b51ee159faf8d6a30b50361801a6d',
+              }
+            })
+          .then(response => (
+          const   
+          
+          this.store.ArrMovies = response.data.results));
+        }
+      }*/
+
+    CastFilm:[],

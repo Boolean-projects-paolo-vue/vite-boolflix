@@ -15,7 +15,7 @@ export default {
 
 <template>
     
-    <div class="card rounded-4" style="border: 1px solid black;">
+    <div class="card rounded-4" style="border: 1px solid red;">
         
         <div class="part front rounded-4">
             <img v-if="moviecard.poster_path" 
@@ -62,7 +62,7 @@ export default {
         max-width: 18%;
         margin: auto;
         position: relative;
-        margin: 0.5rem
+        margin: 0.5rem;
     }
 
     .part{
@@ -87,7 +87,7 @@ export default {
         padding-inline: 3.5rem;
         justify-content: center;
         flex-direction: column;
-        font-size: 14px;
+        font-size: 15px;
         text-align: justify;
     }
 

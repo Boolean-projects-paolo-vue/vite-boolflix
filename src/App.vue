@@ -21,11 +21,11 @@
         }else{
           this.store.inputError = false;
           axios
-        .get('https://api.themoviedb.org/3/search/movie',{
-          params:{
-            api_key: '919b51ee159faf8d6a30b50361801a6d',
-            query: this.store.SearchBar,
-          }
+            .get('https://api.themoviedb.org/3/search/movie',{
+              params:{
+                api_key: '919b51ee159faf8d6a30b50361801a6d',
+                query: this.store.SearchBar,
+              }
         })
           .then(response => (this.store.ArrMovies = response.data.results));
           axios
@@ -37,8 +37,16 @@
           })
           .then(response => (this.store.ArrSeries = response.data.results
           ));
+          axios
+          .get('https://api.themoviedb.org/3/movie/823999/credits?',{
+            params:{
+              api_key: '919b51ee159faf8d6a30b50361801a6d',
+            }
+          })
+          .then(response => (this.store.ArrCastList = response.data.cast
+          ));
+          
         }
-        
       },
     },
     created() {
@@ -61,6 +69,8 @@
         })
         .then(response => (this.store.ArrSeries = response.data.results
       ));
+
+      
     },
   };
 </script>
