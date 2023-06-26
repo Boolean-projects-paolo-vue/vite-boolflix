@@ -62,7 +62,9 @@ export default {
         max-width: 18%;
         margin: auto;
         position: relative;
-        margin: 0.5rem;
+        margin-inline: 1.5rem;
+        margin-bottom: 2rem;
+        margin-top:2rem;
     }
 
     .part{
@@ -87,18 +89,19 @@ export default {
         padding-inline: 3.5rem;
         justify-content: center;
         flex-direction: column;
-        font-size: 15px;
+        font-size: 11px;
         text-align: justify;
     }
 
     span{
         font-weight: 700;
-        font-size: 18px;
+        font-size: 12px;
         color: red;
     }
     
     .card:hover .back {
         transition-duration: 0.8s;
+        scale: 1.2;
         opacity: 1;
         
     }
